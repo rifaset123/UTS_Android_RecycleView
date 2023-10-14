@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/order_activity"
+    tools:context=".Summary">
+    <TextView
+        android:id="@+id/PaymentJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="Payment Method"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageMovieSummary"
+        android:layout_width="105dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="145dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="12dp" />
+
+    <TextView
+        android:id="@+id/MovieTitleSummary"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:gravity="start"
+        android:text="JJK : ZERO"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageMovieSummary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/BioskopSummary"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/inter"
+        android:layout_marginStart="20dp"
+        android:gravity="start"
+        android:text="XXI Ambarukmo"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/imageMovieSummary"
+        app:layout_constraintTop_toBottomOf="@+id/MovieTitleSummary" />
+
+    <TextView
+        android:id="@+id/TanggalSummary"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/inter"
+        android:layout_marginStart="20dp"
+        android:gravity="start"
+        android:text="20 October 2021"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/imageMovieSummary"
+        app:layout_constraintTop_toBottomOf="@+id/BioskopSummary" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_kiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_atas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <TextView
+        android:id="@+id/OrderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Order Number"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toTopOf="@+id/guideline_atas" />
+
+    <TextView
+        android:id="@+id/angkaRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="1198804794001625088"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/OrderNumber" />
+
+    <TextView
+        android:id="@+id/OrderNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Seat"
+        android:textAlignment="textStart"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/angkaRandom"/>
+
+    <TextView
+        android:id="@+id/seat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Regular"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/OrderNumber1" />
+
+    <TextView
+        android:id="@+id/OrderNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Paymend Method"
+        android:textAlignment="textStart"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/seat"/>
+
+    <TextView
+        android:id="@+id/PayMeth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="BNI"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/OrderNumber2" />
+
+    <TextView
+        android:id="@+id/RegularSeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Regular Seat"
+        android:textAlignment="textStart"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/PayMeth"/>
+
+    <TextView
+        android:id="@+id/paySeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Rp. 50.000"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/RegularSeat" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+
+    <TextView
+        android:id="@+id/ActualMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Actual Price"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toTopOf="@+id/guideline_bawah" />
+
+    <TextView
+        android:id="@+id/Money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start"
+        android:text="Rp. 50.000"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline_kiri"
+        app:layout_constraintTop_toBottomOf="@+id/ActualMoney" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

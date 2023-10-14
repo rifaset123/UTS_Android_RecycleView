@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+    <TextView
+        android:id="@+id/PaymentJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="Payment Method"
+        android:textAlignment="textStart"
+        android:textColor="@color/gray"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="730dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PaymentJudul"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/MovieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="start"
+                android:text="Pilih Bioskop"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerBioskop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:entries="@array/Bioskop"
+                app:layout_constraintStart_toStartOf="@+id/MovieTitle"
+                app:layout_constraintTop_toBottomOf="@+id/MovieTitle" />
+
+            <TextView
+                android:id="@+id/PilihSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="start"
+                android:text="Pilih Seat"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerBioskop" />
+
+            <Spinner
+                android:id="@+id/spinnerSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:entries="@array/Seat"
+                app:layout_constraintStart_toStartOf="@+id/PilihSeat"
+                app:layout_constraintTop_toBottomOf="@+id/PilihSeat" />
+
+            <TextView
+                android:id="@+id/PilihTanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="start"
+                android:text="Pilih Waktu"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/spinnerSeat"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSeat" />
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="calendar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/PilihTanggal" />
+
+            <TextView
+                android:id="@+id/RegSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/inter"
+                android:gravity="start"
+                android:text="Regular Seat"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/PilihTanggal"
+                app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+
+            <TextView
+                android:id="@+id/Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/inter"
+                android:gravity="start"
+                android:text="Rp. 50.000"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/datePicker"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/RegSeat"
+                app:layout_constraintTop_toBottomOf="@+id/datePicker" />
+
+            <View
+                android:id="@+id/garis"
+                android:layout_width="355dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Price" />
+
+
+            <TextView
+                android:id="@+id/ActualPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/inter"
+                android:gravity="start"
+                android:text="Actual Price"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/RegSeat"
+                app:layout_constraintTop_toBottomOf="@+id/RegSeat" />
+
+            <TextView
+                android:id="@+id/RealPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/inter"
+                android:gravity="start"
+                android:text="Rp. 50.000"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/datePicker"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/ActualPrice"
+                app:layout_constraintTop_toBottomOf="@+id/Price" />
+
+            <TextView
+                android:id="@+id/PayMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="start"
+                android:text="Pilih Pembayaran"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ActualPrice"
+                app:layout_constraintTop_toBottomOf="@+id/ActualPrice" />
+
+            <Spinner
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:entries="@array/MetodeBayar"
+                app:layout_constraintStart_toStartOf="@+id/PayMethod"
+                app:layout_constraintTop_toBottomOf="@+id/PayMethod" />
+
+            <EditText
+                android:id="@+id/nomorBank"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/custom_editform"
+                android:drawableStart="@drawable/baseline_supervisor_account_24"
+                android:drawablePadding="8dp"
+                android:hint="Account Number"
+                android:padding="10dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/datePicker"
+                app:layout_constraintStart_toStartOf="@+id/payment"
+                app:layout_constraintTop_toBottomOf="@+id/payment" />
+
+            <Button
+                android:id="@+id/btnGetTicket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="@color/biru"
+                android:text="Get Ticket Now!"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/nomorBank"
+                app:layout_constraintStart_toStartOf="@+id/nomorBank"
+                app:layout_constraintTop_toBottomOf="@+id/nomorBank" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
