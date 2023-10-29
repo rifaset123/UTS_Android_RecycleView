@@ -7,4 +7,7 @@
     <color name="coklat">#B2AFAF</color>
     <color name="colorRatingActive">#FFA235</color>
     <color name="colorRatingInactive">#BEBEBE</color>
+    <color name="button_bgcolor">#EEEEEE</color>
+    <color name="button_bgcolor_press">#2e89b1</color>
+    <color name="button_bgcolor_enable">#3db5ea</color>
 </resources>

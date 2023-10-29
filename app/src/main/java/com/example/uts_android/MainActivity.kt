@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 intentToHomepage.putExtra(NAMA_EXTRA, username.text.toString())
                 intentToHomepage.putExtra(PASSWORD_EXTRA, pass.text.toString())
 
-                if (username.text.toString() == "Rifa Indra Setiawan" && pass.text.toString() == "504193"){
+                if (username.text.toString() == "Rifa" && pass.text.toString() == "123"){
                     startActivity(intentToHomepage)
                 }
                 else{

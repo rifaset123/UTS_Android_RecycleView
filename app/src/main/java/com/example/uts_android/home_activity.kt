@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uts_android.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class home_activity : AppCompatActivity() {
     private var titlesList = mutableListOf<String>()
@@ -18,26 +20,59 @@ class home_activity : AppCompatActivity() {
 
     companion object{
         const val Judul = "judulnya"
+        const val NAMA_EXTRA = "nama"
     }
 
     private lateinit var binding: ActivityHomeBinding
+    lateinit var bottomNav : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val nama = intent.getStringExtra(MainActivity.NAMA_EXTRA)
-        with(binding){
-            txtusername.text = nama
+        bottomNav = findViewById(R.id.bottomNavigationView) as BottomNavigationView
+        bottomNav.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.homeItem -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.settingsItem -> {
+                    loadFragment(SettingFragment())
+                    true
+                }
+                R.id.profileItem -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+
+                else -> {
+                    false}
+            }
+        }
+        if (savedInstanceState == null) {
+            val homeFragment = HomeFragment()
+
+            val nama = intent.getStringExtra(MainActivity.NAMA_EXTRA)
+
+
+            // Example: pass data using arguments
+            val bundle = Bundle()
+            bundle.putString(NAMA_EXTRA, nama)
+            homeFragment.arguments = bundle
+
+            // agar nge load fragment nya
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, homeFragment)
+                .commit()
         }
 
-        postToList()
-
-        val recyclerView = findViewById<RecyclerView>(R.id.MyRecyclerView)
-        val gridLayoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
-        recyclerView.layoutManager = gridLayoutManager
-        recyclerView.adapter= MoviesAdapter(titlesList, ratingList, imagaeList, storyList, directorList)
+    }
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container,fragment)
+        transaction.commit()
     }
     private fun addToList(title: String, rating: Int, image: Int, story: String, director: String){
         titlesList.add(title)
